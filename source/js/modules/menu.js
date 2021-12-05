@@ -1,4 +1,9 @@
 export default () => {
+
+  window.onload = () => {
+    document.body.classList.add(`finish-loading`);
+  };
+
   let header = document.querySelector(`.js-header`);
   let menuToggler = document.querySelector(`.js-menu-toggler`);
   let menuLinks = document.querySelectorAll(`.js-menu-link`);
