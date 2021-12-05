@@ -1,10 +1,21 @@
 .social-block {
   position: relative;
-
   &:hover {
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+      & li {
+        opacity: 1
+      }
+      & li:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      & li:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      & li:nth-child(3) {
+        transition-delay: 0.3s;
+      }
     }
   }
 }
@@ -17,6 +28,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color 0.3s;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +47,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: all 0.2s ease-in-out;
   }
 
   svg {
@@ -43,7 +56,6 @@
     width: 2.3rem;
     height: 2.2rem;
   }
-
   &:hover,
   .social-block--active & {
     color: $c-purple;
@@ -55,11 +67,12 @@
   }
 
   &:focus {
-    color: $c-purple;
+    color: white;
     outline: none;
 
     &::before {
       border-color: $c-purple;
+      background-color: $c-purple;
     }
 
     & + .social-block__list {
@@ -89,7 +102,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
-
+  transition: opacity 0.3s;
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
   }
@@ -145,11 +158,11 @@
   li {
     flex: none;
     margin-bottom: 0.5rem;
-
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
     }
-
     @media (max-width: $tablet) and (orientation: portrait) {
       margin: 0 1.25rem;
     }
@@ -210,7 +223,6 @@
     svg {
       width: 0.8rem;
       height: 1.7rem;
-
       @media (min-width: $stop-scaling) {
         width: 8px;
         height: 17px;
@@ -222,7 +234,6 @@
     svg {
       width: 1.5rem;
       height: 1.5rem;
-
       @media (min-width: $stop-scaling) {
         width: 15px;
         height: 15px;
@@ -234,7 +245,6 @@
     svg {
       width: 1.7rem;
       height: 1rem;
-
       @media (min-width: $stop-scaling) {
         width: 10px;
         height: 10px;
